@@ -1,0 +1,25 @@
+
+#include <string>
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main()
+{
+    ofstream out;   
+    string s;// поток для записи
+    out.open("hello.txt");      // открываем файл для записи
+    if (out.is_open())
+    {
+        out << "Всё ОК! Файл открыт!" << endl;
+        
+    }
+    out.close(); 
+    cout << "File has been written" << endl;
+    
+    ifstream in;  
+    in.open("hello.txt");
+    getline(in,s);
+    cout << s;
+    
+    return 0;
+}
